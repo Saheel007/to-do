@@ -1,0 +1,128 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ID</title>
+    <style>
+         body {
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            background-color: rgb(247, 243, 243);
+            
+            
+    }   
+    .cont{
+        border-style: solid;
+            border-width: 3px;
+            border-color: gold;
+            border-radius: 10px;
+            padding: 20px;  
+            margin: 20px;   
+    }
+    h1{
+        text-align: center;
+       margin-top: 10px;
+        
+    }
+        #submit{
+            margin-left: 100px;
+            padding: 10px; 
+        }
+         label {
+            display: inline-block;
+            width: 80px;
+            margin-bottom: 10px;
+            
+        } 
+         form select {
+            width: 170px;
+            padding: 2px;
+            text-align: center;
+        } 
+        table{
+            width: 100%;
+            border-collapse:collapse ;
+            background-color: white;
+        }
+        th,td{
+            border: 3px solid black;
+            padding: 10px;
+            /* text-align: left; */
+        }
+        
+    </style> 
+</head>
+<body>
+    <div class="cont">
+    <h1>Student Details</h1>
+    <form id="studentForm">
+    <label >Name</label>
+    <input id="name" type="text" name="name" required><br><br>
+    <label >Age</label>
+    <input id="age" type="number" required><br><br>
+    <label >Gender</label>
+    <input id="gender-male" type="radio" name="gender" required>
+    <label for="gender-male">Male</label>
+    <input id="gender-female" type="radio" name="gender" >
+    <label for="gender-female">Female</label><br><br>
+    <label>Course</label>
+    <select  id="course">
+        <option >Select</option>
+        <option>Python</option>
+        <option>JavaScript</option>
+    </select><br><br>
+    <label >E-mail</label>
+    <input id="email" type="email" name="email" required><br><br>
+    <input   type="submit" name="submit" id="submit">
+    </form>
+    </div>
+    <div class="add">
+        <table>
+          <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Course</th>
+                    <th>E-mail</th>
+                 </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+    </div>
+
+
+<script>
+    var save=document.getElementById("studentForm")
+    var tbody=document.querySelector("tbody")
+
+    save.addEventListener('submit',function(event){
+        event.preventDefault();
+
+    
+    
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const gender = document.querySelector('input[name="gender"]:checked').nextElementSibling.textContent;
+        const course = document.getElementById('course').value;
+        const email = document.getElementById('email').value;
+
+        const row=document.createElement("tr")
+        row.innerHTML=`<td>${name}</td><td>${age}</td><td>${gender}</td><td>${course}</td><td>${email}</td>`;
+        
+        tbody.append(row)
+        form.reset();
+    
+    })
+</script>
+</body>
+</html>
+
+  
+  
