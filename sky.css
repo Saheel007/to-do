@@ -62,6 +62,19 @@ body {
     z-index: 10;
 }
 
+.popup {
+    background-color: #28d3d3;
+    width: 90%;
+    max-width: 400px; /* Adjust as needed */
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .overlay {
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -69,17 +82,6 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup {
-    background-color: #28d3d3;
-    width: 90%;
-    max-width: 400px; /* Adjust as needed */
-    border-radius: 10px;
-    padding: 20px;
     display: none;
 }
 
